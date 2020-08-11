@@ -22,7 +22,6 @@ class Node{
             this.Hcost = vert * 14 + (horiz - vert) * 10;
         }
         this.Fcost = this.Hcost + this.Gcost;
-        
     }
     
     Node(float x, float y){
@@ -33,10 +32,8 @@ class Node{
     
     void tracepath(){
         fill(0,100,255);
-         square(this.position.x * scale, this.position.y * scale, scale);
-         if (this.parent != null){this.parent.tracepath();
-         }
-         
+        square(this.position.x * scale, this.position.y * scale, scale);
+        if (this.parent != null){this.parent.tracepath();}
     }
     
     void drawsquare(){
