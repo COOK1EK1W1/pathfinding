@@ -109,7 +109,7 @@ void mous_has_done_soething(int type){
             if (start.x != -1){board[int(start.y)][int(start.x)] = 0;}
             //board[mouseY / scale][mouseX / scale] = 2;
             fill(255,255,255);
-            square(start.x * scale, start.y * scale, scale);
+            rect(start.x * scale, start.y * scale, scale, scale);
             start.x = int(mouseX / scale); 
             start.y = int(mouseY / scale);
         }
