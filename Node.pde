@@ -32,7 +32,7 @@ class Node{
     
     void tracepath(){
         fill(0,100,255);
-        square(this.position.x * scale, this.position.y * scale, scale);
+        rect(this.position.x * scale, this.position.y * scale, scale, scale);
         if (this.parent != null){this.parent.tracepath();}
     }
     
@@ -42,7 +42,7 @@ class Node{
         
         if (closed){fill(255,100,0);}else{fill(100,255,0);}
         
-        square(this.position.x * scale, this.position.y * scale,scale);
+        rect(this.position.x * scale, this.position.y * scale,scale,scale);
         fill(0);
         textSize(textscale);
         if (costs){
