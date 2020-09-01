@@ -118,7 +118,7 @@ void mous_has_done_soething(int type){
             if (end.x != -1){board[int(end.y)][int(end.x)] = 0;}
             //board[mouseY / scale][mouseX / scale] = 3;
             fill(255,255,255);
-            square(end.x * scale, end.y * scale, scale);
+            Rect(end.x * scale, end.y * scale, scale, scale);
             end.x = int(mouseX / scale); 
             end.y = int(mouseY / scale);
         }
@@ -132,7 +132,7 @@ void mous_has_done_soething(int type){
         if (mode == 1){fill(0,0,0);} else
         if (mode == 2){fill(0,255,0);} else
         if (mode == 3){fill(0,0,255);}
-        square(int(mouseX / scale) * scale, int(mouseY / scale) * scale, scale);
+        rect(int(mouseX / scale) * scale, int(mouseY / scale) * scale, scale, scale);
         board[mouseY / scale][mouseX / scale] = mode;
     } else
     
