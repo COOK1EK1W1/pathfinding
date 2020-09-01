@@ -105,35 +105,33 @@ void mouseDragged(){mous_has_done_soething(0);}
 void mousePressed(){mous_has_done_soething(1);}
 void mous_has_done_soething(int type){
     if (mouseY < height - bar_height){
+        fill(255);
         if (mode == 2){
             if (start.x != -1){board[int(start.y)][int(start.x)] = 0;}
-            //board[mouseY / scale][mouseX / scale] = 2;
-            fill(255,255,255);
             rect(start.x * scale, start.y * scale, scale, scale);
             start.x = int(mouseX / scale); 
             start.y = int(mouseY / scale);
+            
         }
         if (mode == 3){
-            
             if (end.x != -1){board[int(end.y)][int(end.x)] = 0;}
-            //board[mouseY / scale][mouseX / scale] = 3;
-            fill(255,255,255);
-            Rect(end.x * scale, end.y * scale, scale, scale);
+
+            rect(end.x * scale, end.y * scale, scale, scale);
             end.x = int(mouseX / scale); 
             end.y = int(mouseY / scale);
         }
         
         if (mode == 0){
             fill(255,255,255);
-            if (board[mouseY / scale][mouseX / scale] == 2){start = new PVector(-1,-1);}
-            if (board[mouseY / scale][mouseX / scale] == 3){end = new PVector(-1,-1);}
+            if (board[int(mouseY / scale)][int(mouseX / scale)] == 2){start = new PVector(-1,-1);}
+            if (board[int(mouseY / scale)][int(mouseX / scale)] == 3){end = new PVector(-1,-1);}
             } else
             
         if (mode == 1){fill(0,0,0);} else
         if (mode == 2){fill(0,255,0);} else
         if (mode == 3){fill(0,0,255);}
         rect(int(mouseX / scale) * scale, int(mouseY / scale) * scale, scale, scale);
-        board[mouseY / scale][mouseX / scale] = mode;
+        board[int(mouseY / scale)][int(mouseX / scale)] = mode;
     } else
     
     if (mouseX < width / buttons * 1 && type==1){mode++; if (mode==4){mode = 0;}} else
